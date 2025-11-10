@@ -50,6 +50,7 @@ while running:
         # Move the snake
 
     # Add the head coordinate to the first index of the body coordinate list
+
     # This will essentially move the snakes body by one position in the list
 
     # Update the x,y position of the snakes head and make a new coordinate
