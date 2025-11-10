@@ -36,6 +36,7 @@ WHITE = (255, 255, 255)
 # Set sounds and music
 
 # Set images (in this case, use simple rects...so just create their coordinates)
+
 # For a rectangle you need (top-left x, top-left y, width, height)
 
 # The main game loop
