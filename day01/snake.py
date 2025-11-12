@@ -48,7 +48,7 @@ continue_rect = continue_text.get_rect()
 continue_rect.center = (WINDOW_WIDTH//2, WINDOW_HEIGHT//2 + 64)
 
 # Set sounds and music
-pick_up_sound = pygame.mixer.Sound("pickup_sound.wav")
+pick_up_sound = pygame.mixer.Sound("pick_up_sound.wav")
 
 # Set images (in this case, use simple rects...so just create their coordinates)
 # For a rectangle you need (top-left x, top-left y, width, height)
