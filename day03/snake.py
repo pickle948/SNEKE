@@ -16,7 +16,7 @@ clock = pygame.time.Clock()
 # Set game values
 SNAKE_SIZE = 20
 head_x = WINDOW_WIDTH // 2
-head_y = WINDOW_HEIGHT + 100
+head_y = (WINDOW_HEIGHT // 2) + 100
 snake_dx = 0
 score = 0
 
@@ -84,11 +84,16 @@ while running:
     display_surface.fill(WHITE)
 
     # Blit HUD
-
+    display_surface.blit(title_text, title_rect)
+    display_surface.blit(score_text, score_rect)
 
     # Blit assets
+    pygame.draw.rect(display_surface, GREEN, head_coord)
+    pygame.draw.rect(display_surface, RED, apple_coord)
 
     # Update display and tick clock
+    pygame.display.update()
+    clock.tick(FPS)
 
 # End the game
 pygame.quit()
