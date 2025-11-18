@@ -18,6 +18,7 @@ SNAKE_SIZE = 20
 head_x = WINDOW_WIDTH // 2
 head_y = (WINDOW_HEIGHT // 2) + 100
 snake_dx = 0
+snake_dy = 0
 score = 0
 
 # Set colors
@@ -57,6 +58,7 @@ apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 
 head_coord = (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE)
 head_rect = pygame.draw.rect(display_surface, GREEN, head_coord)
+body_coords = []
 
 # The main game loop
 running = True
@@ -67,13 +69,32 @@ while running:
             running = False
 
         # Move the snake
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                snake_dx = -1 * SNAKE_SIZE
+                snake_dy = 0
+            if event.key == pygame.K_RIGHT:
+                snake_dx = SNAKE_SIZE
+                snake_dy = 0
+            if event.key == pygame.K_UP:
+                snake_dx = 0
+                snake_dy = -1 * SNAKE_SIZE
+            if event.key == pygame.K_DOWN:
+                snake_dx = 0
+                snake_dy = SNAKE_SIZE
 
     # Add the head coordinate to the first index of the body coordinate list
     # This will essentially move the snakes body by one position in the list
+    body_coords.insert(0, head_coord)
+    body_coords.pop()
 
     # Update the x,y position of the snakes head and make a new coordinate
+    head_x += snake_dx
+    head_y += snake_dy
+    head_coord = (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE)
 
     # Check for game over
+
 
     # Check for collisions
 
